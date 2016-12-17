@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 
 app.get('/', function(req, res) {
-    console.log(JSON.stringify(req.headers));
     const ip = req.headers['x-forwarded-for'];
     const language = req.headers['accept-language'].split(',')[0];
     const re = /(?!\()[^()]*(?=\))/;
